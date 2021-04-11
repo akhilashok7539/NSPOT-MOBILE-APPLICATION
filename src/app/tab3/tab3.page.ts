@@ -12,6 +12,6 @@ export class Tab3Page {
   logout(){
     localStorage.clear();
     sessionStorage.clear();
-    this.router.navigate(['/login'])
+    this.router.navigate([''])
   }
 }
