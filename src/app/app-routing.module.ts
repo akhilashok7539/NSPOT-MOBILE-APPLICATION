@@ -51,6 +51,10 @@ const routes: Routes = [
     path: 'add-new-bank-info',
     loadChildren: () => import('./add-new-bank-info/add-new-bank-info.module').then( m => m.AddNewBankInfoPageModule)
   },
+  {
+    path: 'contact-us',
+    loadChildren: () => import('./contact-us/contact-us.module').then( m => m.ContactUsPageModule)
+  },
 ];
 @NgModule({
   imports: [

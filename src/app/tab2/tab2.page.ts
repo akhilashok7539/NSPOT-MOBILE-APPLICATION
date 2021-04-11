@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 
 @Component({
@@ -6,7 +6,7 @@ import { MenuController } from '@ionic/angular';
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss']
 })
-export class Tab2Page {
+export class Tab2Page implements OnInit{
   applicationtype = 'PreApplications';
 
 
@@ -20,5 +20,23 @@ export class Tab2Page {
   openEnd() {
     this.menu.open();
   }
+  ngOnInit() {
+    this.menu.enable(true);
+    this.menu.swipeGesture(true);
 
+  }
+  ngAfterContentInit()  {
+    this.menu.enable(true);
+    this.menu.swipeGesture(true);
+  }
+  ngAfterViewInit() {
+    this.menu.enable(true);
+    this.menu.swipeGesture(true);
+
+  }
+  ngOnDestroy() {
+    this.menu.enable(true);
+    this.menu.swipeGesture(true);
+
+  }
 }

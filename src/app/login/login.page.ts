@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MenuController } from '@ionic/angular';
 import { endPoints } from '../_config/endpoints';
 import { InstituteService } from '../_services/institute.service';
 
@@ -14,9 +15,12 @@ export class LoginPage implements OnInit {
   passwordIcon: string = 'eye-off';
   username;
   password;
-  constructor(private apiservice:InstituteService,private router:Router) { }
+  constructor(private apiservice:InstituteService,private router:Router,public menuCtrl: MenuController) { }
 
   ngOnInit() {
+    this.menuCtrl.enable(false);
+    this.menuCtrl.swipeGesture(false);
+
   }
   hideShowPassword() {
     this.passwordType = this.passwordType === 'text' ? 'password' : 'text';
@@ -45,5 +49,20 @@ export class LoginPage implements OnInit {
         console.error(error);
     
       });
+  }
+
+  ngAfterContentInit()  {
+    this.menuCtrl.enable(false);
+    this.menuCtrl.swipeGesture(false);
+  }
+  ngAfterViewInit() {
+    this.menuCtrl.enable(false);
+    this.menuCtrl.swipeGesture(false);
+
+  }
+  ngOnDestroy() {
+    this.menuCtrl.enable(true);
+    this.menuCtrl.swipeGesture(false);
+
   }
 }
