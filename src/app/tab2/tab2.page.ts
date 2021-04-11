@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab2',
@@ -10,10 +11,14 @@ export class Tab2Page {
 
 
 
-  constructor() {}
+  constructor(private menu: MenuController) { }
   segmentChanged(event)
   {
     console.log(event);
     
   }
+  openEnd() {
+    this.menu.open();
+  }
+
 }

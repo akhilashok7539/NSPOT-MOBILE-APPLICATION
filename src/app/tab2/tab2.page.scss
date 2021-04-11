@@ -6,6 +6,8 @@ ion-toolbar {
 
 p {
     padding: 11px;
+    margin-top: 5px !important;
+    margin-bottom: 0px !important;
 }
 
 .btn-primary {
@@ -24,6 +26,12 @@ p {
 ion-toggle {
     margin: 0 auto;
     display: block;
+}
+
+ion-item {
+    font-family: 'Poppins';
+    font-size: 17px;
+    font-weight: bold;
 }
 
 ion-label {
@@ -92,7 +100,8 @@ ion-button {
 
 img {
     margin: 0 auto;
-    margin-top: 10px;
+    /* margin-top: 10px; */
+    width: 135px;
     display: block;
 }
 
@@ -123,6 +132,10 @@ svg {
     display: block;
 }
 
+// ion-toolbar {
+//     --background: #028490 !important;
+//     margin-bottom: -8px;
+// }
 .addnew {
     float: right;
     background: white;
