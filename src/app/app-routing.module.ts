@@ -43,6 +43,14 @@ const routes: Routes = [
     path: 'verify-student-applications',
     loadChildren: () => import('./verify-student-applications/verify-student-applications.module').then( m => m.VerifyStudentApplicationsPageModule)
   },
+  {
+    path: 'bank-info',
+    loadChildren: () => import('./bank-info/bank-info.module').then( m => m.BankInfoPageModule)
+  },
+  {
+    path: 'add-new-bank-info',
+    loadChildren: () => import('./add-new-bank-info/add-new-bank-info.module').then( m => m.AddNewBankInfoPageModule)
+  },
 ];
 @NgModule({
   imports: [

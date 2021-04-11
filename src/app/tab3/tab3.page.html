@@ -47,6 +47,11 @@
 
                 <ion-icon style="    float: right;" name="chevron-forward-sharp"></ion-icon>
             </ion-card>
+            <ion-card routerLink="/bank-info">
+                BANK INFO
+
+                <ion-icon style="    float: right;" name="chevron-forward-sharp"></ion-icon>
+            </ion-card>
             <ion-card>
                 BOARD OF COUNCIL AWARDED
 
@@ -72,6 +77,10 @@
                 HOSTEL & TRANSPORTATION INFOS
 
                 <ion-icon style="    float: right;" name="chevron-forward-sharp"></ion-icon>
+            </ion-card>
+            <ion-card (click)="logout()">
+                Logout
+                <ion-icon style="    float: right;" name="power-sharp"></ion-icon>
             </ion-card>
         </ion-col>
     </ion-row>

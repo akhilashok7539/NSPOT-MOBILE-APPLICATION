@@ -23,7 +23,7 @@ export class InstituteService {
    * @returns : void
    */
    setHttpOptions(): void {
-    this.userLogedIn = JSON.parse(sessionStorage.getItem('userLogin'));
+    this.userLogedIn = JSON.parse(localStorage.getItem('userLogin'));
     let headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });

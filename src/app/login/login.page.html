@@ -37,11 +37,11 @@
 
         </div>
         <div style="margin-bottom: 20px;">
-            <input type="text" placeholder="User Name">
+            <input type="text" placeholder="User Name" [(ngModel)]="username">
 
         </div>
         <div style="margin-bottom: 20px;">
-            <input [type]="passwordType" placeholder="Password">
+            <input [type]="passwordType" placeholder="Password" [(ngModel)]="password">
             <ion-icon [name]="passwordIcon" item-right (click)="hideShowPassword()" style="    margin-top: -28px;
             float: right;
             margin-right: 9px;
@@ -69,6 +69,6 @@
         <div linespace></div>
         <!-- <ion-button (click)="sendOtp()" class="ion-button-class" shape="round" fill="solid" size="large" expand="block">
               Send OTP</ion-button> -->
-        <button routerLink="/tabs" class="ion-button-class">Login</button>
+        <button (click)="submit()" class="ion-button-class">Login</button>
     </div>
 </ion-content>
