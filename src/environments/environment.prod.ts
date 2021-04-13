@@ -1,6 +1,9 @@
 export const environment = {
   production: true,
   apiUrl: 'http://35.239.209.28:3000/api/',
+
+  // apiUrl: 'https://nspot-server.herokuapp.com/api/',
+ 
   baseApiUrl: 'http://localhost:3000/',
 
   adminPortalUrl: 'http://nspot.admin.surge.sh',
