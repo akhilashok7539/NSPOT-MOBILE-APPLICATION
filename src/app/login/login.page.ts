@@ -29,11 +29,11 @@ export class LoginPage implements OnInit {
 
   submit(){
     let req = {
-      "password": "UCphPvg@",
-      "username": "TEI-little5156"
+      "password": this.password,
+      "username": this.username
 
     }
-    this.apiservice.doPostRequest(endPoints.login, req).subscribe(
+    this.apiservice.login(req).subscribe(
       data=> {
       if (data['status'] === true) {
         console.error(data);

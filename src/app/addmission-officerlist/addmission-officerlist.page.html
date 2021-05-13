@@ -36,10 +36,10 @@
     </ion-row>
 
     <ion-row>
-        <ion-col size="12">
+        <ion-col size="12" *ngFor="let addmisiionOfficerList of addmisiionOfficerList">
             <ion-card>
-                <p>Name</p>
-                <p>Designations ,Department</p>
+                <p>{{addmisiionOfficerList.name}}</p>
+                <p>{{addmisiionOfficerList.designation}} ,{{addmisiionOfficerList.admissionDepartment}}</p>
                 <!-- <ion-toggle color="primary"></ion-toggle>
               <ion-toggle ion-toggle-text="online;offline" ng-model="customText" toggle-class="toggle-my-theme">
                   Custom text: <b>{{ customText || false }}</b>

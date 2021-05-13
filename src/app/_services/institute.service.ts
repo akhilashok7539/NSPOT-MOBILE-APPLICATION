@@ -12,8 +12,10 @@ export class InstituteService {
   public userLogedIn;
 
   SERVER_URL = environment.apiUrl;
-  constructor( private http: HttpClient) { 
+  apiurl = environment.apiUrl;
+  constructor(private http: HttpClient) {
     this.setHttpOptions();
+    this.apiurl = "https://nspot-server.herokuapp.com/api/";
   }
 
   /**
@@ -22,7 +24,7 @@ export class InstituteService {
    * @param : nil
    * @returns : void
    */
-   setHttpOptions(): void {
+  setHttpOptions(): void {
     this.userLogedIn = JSON.parse(localStorage.getItem('userLogin'));
     let headers = new HttpHeaders({
       'Content-Type': 'application/json'
@@ -50,5 +52,119 @@ export class InstituteService {
         return response;
       }),
     );
+  }
+  login(req) {
+    return this.http.post(this.apiurl + 'user/login', req);
+  }
+  getallmaincategory() {
+    return this.http.get('https://nspot-server.herokuapp.com/api/course-categories/');
+  }
+  getmaincategorybyid1(id) {
+    return this.http.get(this.apiurl + 'course-categories/subcategory/' + id);
+  }
+  getmaincategorybyid2(id) {
+    return this.http.get(this.apiurl + 'course-categories/subcategory2/' + id);
+
+  }
+  getmaincategorybyid3(id) {
+    return this.http.get(this.apiurl + 'course-categories/subcategory3/' + id);
+  }
+  getmaincategorybyid4(id) {
+    return this.http.get(this.apiurl + 'course-categories/subcategory4/' + id);
+  }
+  getmaincategorybyid5(id) {
+    return this.http.get(this.apiurl + 'course-categories/subcategory5/' + id);
+  }
+  getallacademiclevel() {
+    return this.http.get(this.apiurl + 'institute-types');
+
+  }
+  getcoursetype() {
+    return this.http.get(this.apiurl + 'course-types/');
+  }
+  getuniversitytypes() {
+    return this.http.get(this.apiurl + 'university-types/');
+
+  }
+  getcourseStream() {
+    return this.http.get(this.apiurl + 'course-stream/');
+
+  }
+  substreamcoursespecialization(id) {
+    return this.http.get(this.apiurl + 'course-stream/specialization/' + id);
+
+  }
+  accademicLevelCoursechange(id) {
+    return this.http.get(this.apiurl + 'academic-level/courses/' + id)
+  }
+  getalltestlist(id) {
+    return this.http.get(this.apiurl + 'institute/aptitude-tests/' + id);
+  }
+  addtestname(req, id) {
+
+    return this.http.post(this.apiurl + 'institute/aptitude-tests/create/' + id, req);
+  }
+  getallQuestions(id) {
+    return this.http.get(this.apiurl + 'institute/aptitude-tests/' + id + '/questions');
+
+  }
+  addquestions(id, req) {
+    return this.http.post(this.apiurl + 'institute/aptitude-tests/' + id + '/create', req);
+  }
+  addacourse(id, req) {
+    return this.http.post(this.apiurl + 'institute/course/create/' + id, req)
+  }
+  getpaymetTenture() {
+    return this.http.get(this.apiurl + 'payment-tenures/');
+  }
+  getbankDetailByInstId(id) {
+    return this.http.get(this.apiurl + 'institute/bank-details/' + id);
+
+  }
+  calculatenspotFee(amount) {
+    // amout is schoolarshipamount
+    return this.http.get(this.apiurl + 'institute/course/calculate-nspot-fees/' + amount);
+
+  }
+  addfeesStructuretoinstitute(req, institueId) {
+    // request body
+
+    // amount: 899
+    // bankAccountId: "1"
+    // hasScolarship: true
+    // instituteCourseId: 1
+    // otherFee: 1000
+    // paymentTenureId: "2"
+    // title: "fe"
+    // validUpto: "2021-05-14"
+    return this.http.post(this.apiurl + 'institute/course/fees/create/' + institueId, req)
+  }
+  addinstituteeligibility(req, id) {
+    // instituteCourseId will pass
+    // eligibiliyInString: "adfasdasdsadsadasdasdsadasdasdsa"
+    // instituteCourseId: 1
+    return this.http.post(this.apiurl + 'institute/course/update/' + id, req)
+  }
+
+  updateJobOpportunity(req, id) {
+    // instituteCourseId will pass
+    // accept: true
+    // hasPlacementAssistant: true
+    // instituteCourseId: 1
+    // jobAreas: "sofewr"
+    // jobPositions: "ebufuber"
+    // recruiters: "indo"
+    // salaryRange: "12312312321"
+    return this.http.post(this.apiurl + 'institute/course/update/' + id, req)
+  }
+  getallinstutecourses(id) {
+    return this.http.get(this.apiurl+'institute/courses/'+id);
+  }
+  addAddmissionOfficer(req)
+  {
+    return this.http.post(this.apiurl+'admission-officer/create/',req);
+  }
+  getalladdmissionOfficer(id){
+    return this.http.get(this.apiurl+'admission-officer/getByInstitute/'+id);
   }
 }

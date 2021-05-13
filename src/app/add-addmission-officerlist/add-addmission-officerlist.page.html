@@ -29,37 +29,44 @@
 
         <ion-item>
             <ion-label position="floating">Name</ion-label>
-            <ion-input></ion-input>
+            <ion-input [(ngModel)]="addmisionOfficer.name"></ion-input>
         </ion-item>
 
         <ion-item>
             <ion-label position="floating">Designation</ion-label>
-            <ion-input></ion-input>
+            <ion-input [(ngModel)]="addmisionOfficer.designation"></ion-input>
+
         </ion-item>
 
         <ion-item>
             <ion-label position="floating">Email Id</ion-label>
-            <ion-input></ion-input>
+            <ion-input [(ngModel)]="addmisionOfficer.email"></ion-input>
+
         </ion-item>
 
         <ion-item>
             <ion-label position="floating">Phone Number 1</ion-label>
-            <ion-input></ion-input>
+            <ion-input [(ngModel)]="addmisionOfficer.phone1"></ion-input>
+
         </ion-item>
+
         <ion-item>
             <ion-label position="floating">Phone Number 2</ion-label>
-            <ion-input></ion-input>
+
+            <ion-input [(ngModel)]="addmisionOfficer.phone2"></ion-input>
+
         </ion-item>
 
         <ion-item>
             <ion-label position="floating">Admission Department</ion-label>
-            <ion-input></ion-input>
+            <ion-input [(ngModel)]="addmisionOfficer.admissionDepartment"></ion-input>
+
         </ion-item>
 
 
 
 
-        <ion-button expand="block">SUBMIT</ion-button>
+        <ion-button expand="block" (click)="submit()">SUBMIT</ion-button>
     </div>
 
 </ion-content>
